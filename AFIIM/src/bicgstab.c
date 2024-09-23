@@ -133,10 +133,11 @@ void EPBiCGSTAB(int n,
 
     // Create the required structures for MKL
     sparse_matrix_t A,G,H;
-    struct matrix_descr descr = {SPARSE_MATRIX_TYPE_GENERAL};
+    struct matrix_descr descr;
     mkl_sparse_d_create_csr (&A, SPARSE_INDEX_BASE_ZERO, n, n, Ai, Ai+1, Aj, Av);
     mkl_sparse_d_create_csr (&G, SPARSE_INDEX_BASE_ZERO, n, n, Gi, Gi+1, Gj, Gv);
     mkl_sparse_d_create_csr (&H, SPARSE_INDEX_BASE_ZERO, n, n, Hi, Hi+1, Hj, Hv);
+    descr.type = SPARSE_MATRIX_TYPE_GENERAL;
 
     // Compute residual r = b - A x
     //mkl_cspblas_dcsrgemv ("N", &n, Av, Ai, Aj, x, r); - Deprecated version
