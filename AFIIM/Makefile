@@ -50,3 +50,4 @@ clean:
 	rm -R $(OBJDIR)
 	rm -R $(DISTDIR)
 	rm -rf example/solution.mtx
+	rm -rf example/example.out
