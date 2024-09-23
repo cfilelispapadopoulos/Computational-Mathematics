@@ -1,0 +1,45 @@
+
+Disclaimer
+============
+The use of the code is regulated by the following copyright agreement.
+
+AFIIM software is freely available for scientific (non-commercial) use.
+ 1. The code can be used only for the purpose of internal research, excluding any commercial use of the AFIIM 
+    software as such or as a part of a software product. Users who want to integrate AFIIM sofware or parts of  
+    it into commercial products require a license agreement.
+ 2. AFIIM is provided "as is" and for the purpose described at the previous point only. In no circumstances can
+    neither the authors nor their institutions be held liable for any deficiency, fault or other mishappening 
+    with regard to the use or performance of AFIIM.
+ 3. All scientific publications, for which AFIIM software has been used, shall mention its usage and refer to 
+    the publication [1] in the References section below.
+
+
+References
+[1] C. K. Filelis - Papadopoulos (2024). Adaptive Factored Incomplete Inverse Matrices. In Review.
+
+Introduction
+============
+The AFIIM package includes the implementation of the Adaptive Factored Incomplete Inverse Matrix preconditioning technique in C
+programming language. The package also includes an implementation of the Explicit Preconditioned Bi-Conjugate Gradient Stabilized
+iterative method based on the AFIIM scheme. Functions for reading Matrix Market files are also provided.
+
+
+Installation
+============
+Compilation is performed by the following process:
+   make
+
+Before ``make'' the full Intel environment (Intel oneAPI) should be sourced, i.e: source /opt/intel/oneapi/setvars.sh
+
+External Libraries
+==================
+This AFIIM package requires the following external libraries:
+
+Intel oneAPI - This library contains optimized verions of BLAS, LAPACK and other software packages and is required by EPBiCGSTAB. The
+	       library can be downloaded from https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-download.html for
+               different operating systems.
+
+
+Example Programs
+================
+The directory example/ includes an example file on how to use the AFIIM package to solve large unsymmetric sparse linear systems.
