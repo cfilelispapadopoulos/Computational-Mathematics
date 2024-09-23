@@ -131,8 +131,17 @@ void EPBiCGSTAB(int n,
     // Initialize iteration counter
     (*iter)=0;
 
+    // Create the required structures for MKL
+    sparse_matrix_t A,G,H;
+    struct matrix_descr descr = {SPARSE_MATRIX_TYPE_GENERAL};
+    mkl_sparse_d_create_csr (&A, SPARSE_INDEX_BASE_ZERO, n, n, Ai, Ai+1, Aj, Av);
+    mkl_sparse_d_create_csr (&G, SPARSE_INDEX_BASE_ZERO, n, n, Gi, Gi+1, Gj, Gv);
+    mkl_sparse_d_create_csr (&H, SPARSE_INDEX_BASE_ZERO, n, n, Hi, Hi+1, Hj, Hv);
+
     // Compute residual r = b - A x
-    mkl_cspblas_dcsrgemv ("N", &n, Av, Ai, Aj, x, r);
+    //mkl_cspblas_dcsrgemv ("N", &n, Av, Ai, Aj, x, r); - Deprecated version
+    mkl_sparse_d_mv(SPARSE_OPERATION_NON_TRANSPOSE,1.0,A,descr,x,0.0,r);
+    
 	cblas_dcopy(n,b,1,p,1);
 	cblas_daxpy(n,-1.0,r,1,p,1);
 
@@ -151,11 +160,14 @@ void EPBiCGSTAB(int n,
     while ((*iter)<NMAX)
     {
         // p_c = G D^{-1} H p
-        mkl_cspblas_dcsrgemv ("N", &n, Hv, Hi, Hj, p, pc);
+        // mkl_cspblas_dcsrgemv ("N", &n, Hv, Hi, Hj, p, pc); - Deprecated version
+        mkl_sparse_d_mv(SPARSE_OPERATION_NON_TRANSPOSE,1.0,H,descr,p,0.0,pc);
         vdMul( n, IDv, pc, tm );
-        mkl_cspblas_dcsrgemv ("N", &n, Gv, Gi, Gj, tm, pc);
+        // mkl_cspblas_dcsrgemv ("N", &n, Gv, Gi, Gj, tm, pc); - Deprecated version
+        mkl_sparse_d_mv(SPARSE_OPERATION_NON_TRANSPOSE,1.0,G,descr,tm,0.0,pc);
         // v = A p_c
-        mkl_cspblas_dcsrgemv ("N", &n, Av, Ai, Aj, pc, v);
+        // mkl_cspblas_dcsrgemv ("N", &n, Av, Ai, Aj, pc, v); - Deprecated version
+        mkl_sparse_d_mv(SPARSE_OPERATION_NON_TRANSPOSE,1.0,A,descr,pc,0.0,v);
         
         // alpha = m1 / (r_0,v)
         a=m1/cblas_ddot(n,r0,1,v,1);
@@ -165,11 +177,14 @@ void EPBiCGSTAB(int n,
 		cblas_daxpy(n,-a,v,1,s,1);
         
         // s_c = G D^{-1} H s
-        mkl_cspblas_dcsrgemv ("N", &n, Hv, Hi, Hj, s, sc);
+        // mkl_cspblas_dcsrgemv ("N", &n, Hv, Hi, Hj, s, sc); - Deprecated version
+        mkl_sparse_d_mv(SPARSE_OPERATION_NON_TRANSPOSE,1.0,H,descr,s,0.0,sc);
         vdMul( n, IDv, sc, tm);
-        mkl_cspblas_dcsrgemv ("N", &n, Gv, Gi, Gj, tm, sc);
+        // mkl_cspblas_dcsrgemv ("N", &n, Gv, Gi, Gj, tm, sc); - Deprecated version
+        mkl_sparse_d_mv(SPARSE_OPERATION_NON_TRANSPOSE,1.0,G,descr,tm,0.0,sc);
         // t = A S_c
-        mkl_cspblas_dcsrgemv ("N", &n, Av, Ai, Aj, sc, t);
+        // mkl_cspblas_dcsrgemv ("N", &n, Av, Ai, Aj, sc, t); - Derpecated version
+        mkl_sparse_d_mv(SPARSE_OPERATION_NON_TRANSPOSE,1.0,A,descr,sc,0.0,t);
         
         // omega = (t,s) / (t,t)
         om=cblas_ddot(n,t,1,s,1)/cblas_ddot(n,t,1,t,1);
