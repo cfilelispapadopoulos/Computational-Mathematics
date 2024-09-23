@@ -21,7 +21,7 @@ Introduction
 ============
 The AFIIM package includes the implementation of the Adaptive Factored Incomplete Inverse Matrix preconditioning technique in C
 programming language. The package also includes an implementation of the Explicit Preconditioned Bi-Conjugate Gradient Stabilized
-iterative method based on the AFIIM scheme. Functions for reading Matrix Market files are also provided.
+iterative method based on the AFIIM scheme. Functions for reading and writing Matrix Market files are also provided.
 
 
 Installation
