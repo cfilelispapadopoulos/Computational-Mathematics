@@ -1,6 +1,6 @@
 # Computational Mathematics Software
 
-This repository retains codes from the field of Computational Mathematics, corresponding to scientific publications.
+This repository contains codes from the field of Computational Mathematics, corresponding to scientific publications.
 
 ## Preconditioning
 - AFIIM - Adaptive Factored Incomplete Inverse Matrix [1]
