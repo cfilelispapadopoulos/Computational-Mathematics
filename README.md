@@ -3,7 +3,7 @@
 This repository contains codes from the field of Computational Mathematics, corresponding to scientific publications.
 
 ## Preconditioning
-- AFIIM - Adaptive Factored Incomplete Inverse Matrix [1]
+- AFIIM - Adaptive Factored Incomplete Inverse Matrix with robust filtering ($$\alpha FIIM (\epsilon)$$) [1]
 
 
 
