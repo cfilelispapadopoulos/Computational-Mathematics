@@ -10,7 +10,8 @@ Installation
 Compilation is performed by the following process:
    make
 
-Before ``make'' the full Intel environment (Intel oneAPI) should be sourced, i.e: source /opt/intel/oneapi/setvars.sh
+Before issuing ``make'' command in the terminal, the full Intel environment (Intel oneAPI) should be (initially installed and then) 
+sourced, i.e: source /opt/intel/oneapi/setvars.sh.
 
 External Libraries
 ==================
