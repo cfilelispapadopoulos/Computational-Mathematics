@@ -7,7 +7,7 @@ iterative method based on the AFIIM scheme. Functions for reading and writing Ma
 
 Installation
 ============
-Compilation is performed by the following process:
+Building the AFIIM software is performed by the issuing the following command on the root folder:
    make
 
 Before issuing ``make'' command in the terminal, the full Intel environment (Intel oneAPI) should be (initially installed and then) 
