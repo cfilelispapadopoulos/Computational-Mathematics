@@ -116,7 +116,7 @@ void read_coeff_matrix(const char* filename,
         printf("Matrix is not square\n");
         exit(1);
     }
-
+    
     // Allocate more space in memory
     I = (int *)malloc(nnz * sizeof(int));
     J = (int *)malloc(nnz * sizeof(int));
@@ -129,7 +129,7 @@ void read_coeff_matrix(const char* filename,
         I[i]--;  /* adjust from 1-based to 0-based */
         J[i]--;
     }
-
+    
     // Close file
     fclose(f);
 
@@ -164,7 +164,7 @@ void read_coeff_matrix(const char* filename,
             {
                 tJ[tnnz] = tI[i];
                 tI[tnnz] = tJ[i];
-                tval[tnnz] = val[i];
+                tval[tnnz] = tval[i];
                 tnnz++;
             }
         }
