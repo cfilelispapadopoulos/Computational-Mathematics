@@ -25,3 +25,6 @@ Intel oneAPI - This library contains optimized verions of BLAS, LAPACK and other
 Example Programs
 ================
 The directory example/ includes an example file on how to use the AFIIM package to solve large unsymmetric sparse linear systems.
+This can be performed by navigating to the example folder and issuing the command: ./example.out sherman2.mtx sherman2_rhs1.mtx 9e-6
+The example program requires 3 inputs: (1) Coefficient matrix file in Matrix Market format, (2) Right hand side vector file in 
+Matrix market format, (3) Drop tolerance (\epsilon).
