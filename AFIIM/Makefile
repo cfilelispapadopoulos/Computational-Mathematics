@@ -8,7 +8,7 @@ SOURCEDIR = src
 INCDIR = inc
 
 # Compiler and linker flags
-CFLAGS := $(SCM) -Wall -fPIC
+CFLAGS := $(SCM) -Wall -fPIC -O3
 LFLAGS := $(CFLAGS) -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -ldl -lpthread -lm
 
 # Gathers all header and C files located in the root directory
