@@ -68,6 +68,7 @@
 // eta              (double)            Threshold for the diagonal elements. In case of values lower than the 
 //                                      threshold the values are substituted with (10^{-4}+dtol).
 //                                      A good initial value is approximately 10^{-8}.
+// shift			(double)			Diagonal shift such that s_i = s_i + shift | A_{i,i} |.
 //
 // OUTPUT
 // NAME             TYPE                DESCRIPTION
@@ -111,7 +112,8 @@ void afiim(int n,
            double dtol, 
            int elemPerRowCol, 
            int growth, 
-           double eta)
+           double eta,
+		   double shift)
 {
     // Iteration variables
 	int i,j,k,jdx,kdx;
@@ -325,10 +327,11 @@ void afiim(int n,
 	}
 
     // First elements of the factors of the approximate inverse
-    if (fabs(Dv[0]) < eta)
+	s = Dv[0]; //+ shift * fabs(Dv[0]);
+    if (fabs(s) < eta)
         (*IDv)[0]=1.0/(1e-4+dtol);
     else
-	    (*IDv)[0]=1.0/Dv[0];
+	    (*IDv)[0]=1.0/s;
 
 	Gv[0]=(double *)malloc(sizeof(double));
 	Gv[0][0]=1.0;
@@ -630,7 +633,7 @@ void afiim(int n,
 		}
 		
 		//Check and populate matrix IDv
-		s+=(s1+s2);
+		s+=(s1+s2) + shift * fabs(d);
 		if (fabs(s)<eta) s=(1e-4+dtol);
 		(*IDv)[i+1]=1./s;
 	

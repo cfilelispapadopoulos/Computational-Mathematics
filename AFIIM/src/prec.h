@@ -65,6 +65,7 @@
 // eta              (double)            Threshold for the diagonal elements. In case of values lower than the 
 //                                      threshold the values are substituted with (10^{-4}+dtol).
 //                                      A good initial value is approximately 10^{-8}.
+// shift			(double)			Diagonal shift such that s_i = s_i + shift | A_{i,i} |.
 //
 // OUTPUT
 // NAME             TYPE                DESCRIPTION
@@ -108,6 +109,7 @@ void afiim(int n,
            double dtol, 
            int elemPerRowCol, 
            int growth, 
-           double eta);
+           double eta,
+           double shift);
 
 #endif
