@@ -8,6 +8,16 @@
 
 int main(int argc, char **argv)
 {
+    // Check input number
+    if (argc != 4)
+    {
+        printf("\nThis program requires 3 command line arguments:\n");
+        printf("(1) Name of the file retaining the Coefficient matrix in Matrix Market format\n");
+        printf("(2) Name of the file retaining the right hand side in Matrix Market format\n");
+        printf("(3) Drop tolerance (\\epsilon)\n\n");
+        exit(1);
+    }
+
     // Variables to measure execution time
     clock_t start, end;
 
