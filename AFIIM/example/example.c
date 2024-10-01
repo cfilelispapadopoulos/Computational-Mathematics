@@ -4,8 +4,9 @@
 #include "rw_matrix.h"
 #include "prec.h"
 #include "bicgstab.h"
+#include "misc.h"
 
-int main(void)
+int main(int argc, char **argv)
 {
     // Variables to measure execution time
     clock_t start, end;
@@ -22,7 +23,7 @@ int main(void)
     // Variables corresponding to the AFIIM preconditioner
     double *Gv,*Hv,*IDv;
     int *Gi,*Gj,*Hi,*Hj;
-    double dtol = 9e-6; 
+    double dtol = atof(argv[3]); 
     int elemPerRowCol = 10, growth = 5;
     double eta = 0.0, shift = 0.0;
 
@@ -34,14 +35,14 @@ int main(void)
     int i;
 
     // Read coefficient matrix from file
-    read_coeff_matrix("sherman2.mtx", 
+    read_coeff_matrix(argv[1], 
                      &n, 
                      &Av, 
                      &Aj, 
                      &Ai);
 
     // Read right hand side from file
-    read_rhs_vector("sherman2_rhs1.mtx", 
+    read_rhs_vector(argv[2], 
                      &m, 
                      &B);
 
@@ -52,7 +53,7 @@ int main(void)
         exit(1);
     }
 
-    printf("Coefficient Matrix A with n = %d and nnz(A) = %d\n",n,Ai[n]);
+    printf("Coefficient Matrix A with n = %d and nnz(A) = %d\n\n",n,Ai[n]);
 
 
     // Allocate and set initial guess
@@ -81,7 +82,7 @@ int main(void)
 
     // Print nonzeros of preconditioner
     printf("Elapsed time for computation of AFIIM: %lf seconds\n", ((double) (end - start)) / CLOCKS_PER_SEC);
-    printf("Nonzero elements in preconditioner: %d\n",n + Gi[n] + Hi[n]);
+    printf("Nonzero elements in preconditioner (nnz(G)+nnz(H)+nnz(D)): %d\n\n",n + Gi[n] + Hi[n]);
     
     // Solve the linear system
     start = clock();
