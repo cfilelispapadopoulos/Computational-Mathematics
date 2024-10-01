@@ -119,22 +119,22 @@ void afiim(int n,
 	int i,j,k,jdx,kdx;
 
 	// Lower, Upper and Diagonal parts of coefficient matrix
-	double *Uv,*Lv;
-	int *Ui,*Uj,*Li,*Lj;
-	double *Dv;
+	double *Uv=NULL,*Lv=NULL;
+	int *Ui=NULL,*Uj=NULL,*Li=NULL,*Lj=NULL;
+	double *Dv=NULL;
 
 	// Temp sparse vectors and other variables
-	double *tc,*ttc;
-	int *itc,*ittc;
+	double *tc=NULL,*ttc=NULL;
+	int *itc=NULL,*ittc=NULL;
 	int ltc=0,lttc=0,lastc=-2,lasttc=-2;
-	double *tb,*ttb;
-	int *itb,*ittb;
+	double *tb=NULL,*ttb=NULL;
+	int *itb=NULL,*ittb=NULL;
 	int ltb=0,lttb=0,lastb=-2,lasttb=-2;
 	int tlast,cnt;
 	double sum;
 
 	// Norm - retaining vectors
-	double *gnrms,*hnrms,*unrms,*lnrms,*alrnrms,*aucnrms;
+	double *gnrms=NULL,*hnrms=NULL,*unrms=NULL,*lnrms=NULL,*alrnrms=NULL,*aucnrms=NULL;
 
     // Initialize Temp vectors
 	tc=(double *)malloc(n * sizeof(double));
@@ -183,12 +183,12 @@ void afiim(int n,
 	for(i=0;i<n;i++) aucnrms[i]=1.0;
 	
 	// Pointers to factors G,H in hybrid CSR - CSC format and inverse diagonal factor
-	double **Gv,**GTv;
-	int **Gi,**GTi;
-	int *cG,*cGT,*mGT;
-	double **Hv,**HTv;
-	int **Hi,**HTi;
-	int *cH,*cHT,*mHT;
+	double **Gv=NULL,**GTv=NULL;
+	int **Gi=NULL,**GTi=NULL;
+	int *cG=NULL,*cGT=NULL,*mGT=NULL;
+	double **Hv=NULL,**HTv=NULL;
+	int **Hi=NULL,**HTi=NULL;
+	int *cH=NULL,*cHT=NULL,*mHT=NULL;
 	(*IDv)=(double *)malloc(n * sizeof(double));
 	Gv =(double **)malloc(n * sizeof(double*));
 	Gi =(int **)malloc(n * sizeof(int*));

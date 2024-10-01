@@ -1,5 +1,5 @@
-#ifndef QSORT_H
-#define QSORT_H
+#ifndef MISC_H
+#define MISC_H
 
 // DISCLAIMER
 // The use of the code is regulated by the following copyright agreement.
@@ -20,8 +20,9 @@
 
 
 
-// qSort2 - Function that sorts two arrays with respect to first of them using quicksort. Sorting is performed
-//          in place
+// form_model_rhs - Function that forms a model right hand side corresponding to a sparse coefficient matrix
+//                  stored in CSR storage format, such that the solution of the linear system is a vector
+//                  with all its components set to 1.
 //
 // Author: Christos K. Papadopoulos Filelis
 //         Assistant Professor
@@ -33,21 +34,18 @@
 // ---------------------- Arguments -------------------------------------------------------------------------
 // INPUT
 // NAME             TYPE                DESCRIPTION
-// arr              (int*)              Pointer to a vector of integers.
-// arr2             (double*)           Pointer to a vector of doubles.
-// left             (int)               Integer index of the beginning of subarray.
-// right            (int)               Integer index of the ending of subvector such that elements of the
-//                                      subarray to be sorted reside in [left,right]. To sort a vector on n
-//                                      elements left = 0 and right = n-1.
-// ascdes           (int)               Integer either 0 or 1 denoting either ascending or descending type of
-//                                      sorting.
+// n                (integer)           Size of square general sparse matrix A.
+// Av               (double*)           Vector of size nnz(A) retaining the values of A (CSR).
+// Aj               (integer*)          Vector of size nnz(A) retaining the column indices of the 
+//                                      elements of matrix A (CSR).
+// Ai               (integer*)          Vector of size n+1 retaining the offsets of the rows of A (CSR).
 //
 // OUTPUT
 // NAME             TYPE                DESCRIPTION
-// arr              (int*)              Pointer to a vector of integers.
-// arr2             (double*)           Pointer to a vector of doubles.
+// y                (double**)          Vector retaining the right hand side. Should be unallocated upon
+//                                      call.
 
 
-void qSort2(int * arr, double * arr2, int left, int right, int ascdes);
+void form_model_rhs(int n, double *Av, int *Aj, int *Ai, double **y);
 
 #endif

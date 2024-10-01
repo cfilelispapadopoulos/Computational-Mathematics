@@ -19,7 +19,7 @@
 
 
 
-// qSort2 - Function that sorts two arrays with respect to first of them using quicksort. Sorting in sperformed
+// qSort2 - Function that sorts two arrays with respect to first of them using quicksort. Sorting is performed
 //          in place
 //
 // Author: Christos K. Papadopoulos Filelis

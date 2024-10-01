@@ -83,7 +83,7 @@ void read_coeff_matrix(const char* filename,
     // Check existence of file and open for reading
     if ((f = fopen(filename, "r")) == NULL)
     {
-        printf("File does not exist\n");
+        printf("File %s does not exist\n",filename);
         exit(1);
     }
 
@@ -260,7 +260,7 @@ void read_rhs_vector(const char* filename,
     // Check existence of file and open for reading
     if ((f = fopen(filename, "r")) == NULL)
     {
-        printf("File does not exist\n");
+        printf("File %s does not exist\n",filename);
         exit(1);
     }
 
