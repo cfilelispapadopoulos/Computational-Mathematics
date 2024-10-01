@@ -24,7 +24,7 @@ int main(void)
     int *Gi,*Gj,*Hi,*Hj;
     double dtol = 9e-6; 
     int elemPerRowCol = 10, growth = 5;
-    double eta = 0.0;
+    double eta = 0.0, shift = 0.0;
 
     // EPBiCGSTAB related variables
     int NMAX = 500, iter, info;
@@ -75,7 +75,8 @@ int main(void)
           dtol, 
           elemPerRowCol, 
           growth, 
-          eta);
+          eta,
+          shift);
     end = clock();
 
     // Print nonzeros of preconditioner
