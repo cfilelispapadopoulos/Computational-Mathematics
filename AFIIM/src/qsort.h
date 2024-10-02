@@ -20,8 +20,8 @@
 
 
 
-// qSort2 - Function that sorts two arrays with respect to first of them using quicksort. Sorting is performed
-//          in place
+// qSort2 - Function that sorts two arrays (integer and double) with respect to first of them using quicksort. 
+//          Sorting is performed in place
 //
 // Author: Christos K. Papadopoulos Filelis
 //         Assistant Professor
@@ -49,5 +49,36 @@
 
 
 void qSort2(int * arr, double * arr2, int left, int right, int ascdes);
+
+
+// qSort2i - Function that sorts two arrays (integer and integer) with respect to first of them using quicksort. 
+//           Sorting is performed in place
+//
+// Author: Christos K. Papadopoulos Filelis
+//         Assistant Professor
+//         Democritus University of Thrace
+//         Department of Electrical and Computer Engineering
+//         Xanthi, Greece, GR 67100
+//         email: cpapad@ee.duth.gr
+//
+// ---------------------- Arguments -------------------------------------------------------------------------
+// INPUT
+// NAME             TYPE                DESCRIPTION
+// arr              (int*)              Pointer to a vector of integers.
+// arr2             (double*)           Pointer to a vector of doubles.
+// left             (int*)              Integer index of the beginning of subarray.
+// right            (int*)              Integer index of the ending of subvector such that elements of the
+//                                      subarray to be sorted reside in [left,right]. To sort a vector on n
+//                                      elements left = 0 and right = n-1.
+// ascdes           (int*)              Integer either 0 or 1 denoting either ascending or descending type of
+//                                      sorting.
+//
+// OUTPUT
+// NAME             TYPE                DESCRIPTION
+// arr              (int*)              Pointer to a vector of integers.
+// arr2             (int*)              Pointer to a vector of integers.
+
+
+void qSort2i(int *arr, int *arr2, int left, int right, int ascdes);
 
 #endif
