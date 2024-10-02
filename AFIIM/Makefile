@@ -1,5 +1,5 @@
 # This is for C but can easily be modified to work for other languages as well
-CC = gcc
+CC = g++
 
 # Object files go into $(OBJDIR), executables go into $DISTDIR
 OBJDIR = obj
@@ -8,21 +8,21 @@ SOURCEDIR = src
 INCDIR = inc
 
 # Compiler and linker flags
-CFLAGS := $(SCM) -Wall -fPIC -O3
-LFLAGS := $(CFLAGS) -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -ldl -lpthread -lm
+CXXFLAGS := -Wall -fPIC -O3
+LFLAGS := $(CXXFLAGS) -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -ldl -lpthread -lm
 
 # Gathers all header and C files located in the root directory
 # in $(HFILES) and $(CFILES), respectively
-HFILES := $(wildcard $(SOURCEDIR)/*.h)
-CFILES := $(wildcard $(SOURCEDIR)/*.c)
+HPPFILES := $(wildcard $(SOURCEDIR)/*.hpp)
+CXXFILES := $(wildcard $(SOURCEDIR)/*.cpp)
 
 # Produces in $(OFILES) the names of .o object files for all C files
-OFILES := $(patsubst %.c,%.o,$(CFILES))
+OFILES := $(patsubst %.cpp,%.o,$(CXXFILES))
 
 # This a rule that defines how to compile all C files that have changed
 # (or their header files) since they were compiled last
-$(OBJDIR)/%.o : %.c $(HFILES) $(CFILES)
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJDIR)/%.o : %.cpp $(HPPFILES) $(CXXFILES)
+	$(CC) $(CXXFLAGS) -c $< -o $@
 
 # Consider these targets as targets, not files
 .PHONY : all clean
@@ -34,7 +34,7 @@ all: $(OFILES)
 	$(CC) $(LFLAGS) $(OFILES) -shared -o $(DISTDIR)/libafiim.so
 	mv $(SOURCEDIR)/*.o $(OBJDIR)
 	ar rcs $(DISTDIR)/libafiim.a $(OBJDIR)/*.o
-	$(CC) $(LFLAGS) -I$(SOURCEDIR) example/example.c $(DISTDIR)/libafiim.a -o example/example.out
+	$(CC) $(LFLAGS) -I$(SOURCEDIR) example/example.cpp $(DISTDIR)/libafiim.a -o example/example.out
 
 # $(OBJDIR) is an order-only prerequisite:
 # only compile if $(OBJDIR) does not exist yet and
