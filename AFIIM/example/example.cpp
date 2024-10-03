@@ -47,15 +47,15 @@ int main(int argc, char **argv)
 
     // Read coefficient matrix from file
     read_coeff_matrix(argv[1], 
-                     &n, 
-                     &Av, 
-                     &Aj, 
-                     &Ai);
+                      &n, 
+                      &Av, 
+                      &Aj, 
+                      &Ai);
 
     // Read right hand side from file
     read_rhs_vector(argv[2], 
-                     &m, 
-                     &B);
+                    &m, 
+                    &B);
 
     // Check if dimensions agree
     if (n != m)
