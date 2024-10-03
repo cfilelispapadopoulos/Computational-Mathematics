@@ -326,7 +326,7 @@ void afiim(int n,
 	}
 
     // First elements of the factors of the approximate inverse
-	s = Dv[0]; //+ shift * fabs(Dv[0]);
+	s = Dv[0] + shift * fabs(Dv[0]);
     if (fabs(s) < eta)
         (*IDv)[0]=1.0/(1e-4+dtol);
     else
