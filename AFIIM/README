@@ -15,7 +15,7 @@ sourced, i.e: source /opt/intel/oneapi/setvars.sh.
 
 External Libraries
 ==================
-This AFIIM package requires the following external libraries:
+The AFIIM package requires the following external libraries:
 
 Intel oneAPI - This library contains optimized verions of BLAS, LAPACK and other software packages and is required by EPBiCGSTAB. The
 	       library can be downloaded from https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-download.html for
