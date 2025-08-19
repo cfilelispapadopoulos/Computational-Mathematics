@@ -11,4 +11,4 @@ All software depending on Intel MKL may present differences in results for diffe
 may occur also when the software is executed in differnt hardware.
 
 # References
-[1] C. K. Filelis - Papadopoulos (2024). Adaptive Factored Incomplete Inverse Matrices. In Review.
+[1] C. K. Filelis - Papadopoulos (2024). Adaptive Factored Incomplete Inverse Matrices. Numer Linear Algebra Appl, 32: e2603. https://doi.org/10.1002/nla.2603.
