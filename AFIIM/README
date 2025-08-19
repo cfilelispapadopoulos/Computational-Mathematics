@@ -8,6 +8,7 @@ iterative method based on the AFIIM scheme. Functions for reading and writing Ma
 Installation
 ============
 Building the AFIIM software is performed by the issuing the following command on the root folder:
+
    make
 
 Before issuing ``make'' command in the terminal, the full Intel environment (Intel oneAPI) should be (initially installed and then) 
@@ -18,7 +19,7 @@ External Libraries
 The AFIIM package requires the following external libraries:
 
 Intel oneAPI - This library contains optimized verions of BLAS, LAPACK and other software packages and is required by EPBiCGSTAB. The
-	       library can be downloaded from https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-download.html for
+	           library can be downloaded from https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-download.html for
                different operating systems.
 
 
