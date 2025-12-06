@@ -4,7 +4,7 @@ This repository contains codes from the field of Computational Mathematics, corr
 
 ## Preconditioning
 - AFIIM  - Adaptive Factored Incomplete Inverse Matrix with robust filtering ($$\alpha FIIM (\epsilon)$$) [1]
-- DPFIIM - Dynamic Pattern Factored Incomplete Inverse Matrix $$(DPFIIM(k,\ell,m,\epsilon))$$ [2] 
+- PDFIIM - Parallel Dynamic Factored Incomplete Inverse Matrix $$(PDFIIM(k,\ell,m,\epsilon))$$ [2] 
 
 
 ## Important Note
