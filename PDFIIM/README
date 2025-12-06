@@ -18,7 +18,7 @@ External Libraries
 This PDFIIM package requires the following external libraries:
 
 Intel oneAPI - This library contains optimized verions of BLAS, LAPACK and other software packages and is required by EPBiCGSTAB. The
-	       library can be downloaded from https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-download.html for
+	           library can be downloaded from https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-download.html for
                different operating systems.
 
 
