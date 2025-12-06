@@ -32,7 +32,7 @@
 //
 // The Explicit Preconditioned Bi-Conjugate Gradient Stabilized is a smoothly converging Krylov subspace 
 // iterative method for nonsymmetric linear systems and was proposed by H.A. van der Vorst [2]. The vesion
-// used below is modified for supporting AFIIM preconditioning of the form y = G D^{-1} H, where G and H 
+// used below is modified for supporting PDFIIM preconditioning of the form y = G D^{-1} H, where G and H 
 // are sparse factors stored in CSR format and D^{-1} is a dense vector retaining the diagonal elements [2].
 //
 //
