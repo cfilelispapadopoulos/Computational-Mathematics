@@ -9,7 +9,7 @@ This repository contains codes from the field of Computational Mathematics, corr
 
 ## Important Note
 All software depending on Intel MKL may present differences in results for different MKL versions. Moreover, differences
-may occur also when the software is executed in differnt hardware.
+may occur also when the software is executed in different hardware.
 
 # References
 [1] C. K. Filelis - Papadopoulos (2024). Adaptive Factored Incomplete Inverse Matrices. Numer Linear Algebra Appl, 32: e2603. https://doi.org/10.1002/nla.2603.
