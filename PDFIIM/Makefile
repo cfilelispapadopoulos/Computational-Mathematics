@@ -9,8 +9,8 @@ INCDIR = inc
 SUITESPARSEDIR = external/SuiteSparse
 
 # Compiler and linker flags
-CXXFLAGS := -Wall -fPIC -O3 -std=c++17 -lrt -fopenmp -lmkl_intel_lp64 -lmkl_sequential -lmkl_core
-LFLAGS := $(CXXFLAGS) -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -ldl -lpthread -lm
+CXXFLAGS := -Wall -fPIC -O3 -std=c++17 -lrt -fopenmp -I$(MKLROOT)/include -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core
+LFLAGS := -I$(MKLROOT)/include -L$(MKLROOT)/lib/intel64 -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_intel_thread -liomp5 -lmkl_core -ldl -lpthread -lrt
 
 # Gathers all header and C files located in the root directory
 # in $(HFILES) and $(CFILES), respectively
