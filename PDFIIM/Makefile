@@ -6,7 +6,6 @@ OBJDIR = obj
 DISTDIR = build
 SOURCEDIR = src
 INCDIR = inc
-SUITESPARSEDIR = external/SuiteSparse
 
 # Compiler and linker flags
 CXXFLAGS := -Wall -fPIC -O3 -std=c++17 -lrt -fopenmp -I$(MKLROOT)/include -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core
@@ -37,7 +36,7 @@ all: $(OFILES)
 	mv $(SOURCEDIR)/*.o $(OBJDIR)
 	ar rcs $(DISTDIR)/libafiim.a $(OBJDIR)/*.o
 
-	$(CXX) $(LFLAGS) -I$(SOURCEDIR) -I$(SUITESPARSEDIR)/include example/pdfiim.cpp \
+	$(CXX) $(LFLAGS) -I$(SOURCEDIR) \
 			$(DISTDIR)/libafiim.a \
 			-o example/pdfiim.out		
 
