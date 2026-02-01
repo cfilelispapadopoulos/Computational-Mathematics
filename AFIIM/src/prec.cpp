@@ -634,7 +634,7 @@ void afiim(int n,
 		
 		//Check and populate matrix IDv
 		s+=(s1+s2) + shift * fabs(d);
-		if (fabs(s)<eta) s=(1e-4+dtol);
+		if (fabs(s)<=eta) s=(1e-4+dtol);
 		(*IDv)[i+1]=1./s;
 	
 	}
