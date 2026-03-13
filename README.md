@@ -13,7 +13,7 @@ All software depending on Intel MKL may present differences in results for diffe
 may occur also when the software is executed in different hardware.
 
 # References
-[1] C. K. Filelis - Papadopoulos (2024). Adaptive Factored Incomplete Inverse Matrices. Numer Linear Algebra Appl, 32: e2603. https://doi.org/10.1002/nla.2603.
+[1] C. K. Filelis - Papadopoulos (2024). Adaptive Factored Incomplete Inverse Matrices. Numerical Linear Algebra Appl, 32: e2603. https://doi.org/10.1002/nla.2603.
 
 [2] C. K. Filelis - Papadopoulos and G. A. Gravvanis (2025). Parallel sparsity patterns for factored incomplete inverse matrices, Journal of Computational Science, Volume 93, 2026, 102736, ISSN 1877-7503. https://doi.org/10.1016/j.jocs.2025.102736.
 
