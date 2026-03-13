@@ -4,7 +4,8 @@ This repository contains codes from the field of Computational Mathematics, corr
 
 ## Preconditioning
 - AFIIM  - Adaptive Factored Incomplete Inverse Matrix with robust filtering ($$\alpha FIIM (\epsilon)$$) [1]
-- PDFIIM - Parallel Dynamic Factored Incomplete Inverse Matrix $$(PDFIIM(k,\ell,m,\epsilon))$$ [2] 
+- PDFIIM - Parallel Dynamic Factored Incomplete Inverse Matrix $$(PDFIIM(k,\ell,m,\epsilon))$$ [2]
+- ACIFIM - Adaptive Combined Incomplete Factorization and Inverse Matrix ($$\alpha CIFIM(\epsilon_1,\epsilon_2)$$) [3]
 
 
 ## Important Note
@@ -15,3 +16,5 @@ may occur also when the software is executed in different hardware.
 [1] C. K. Filelis - Papadopoulos (2024). Adaptive Factored Incomplete Inverse Matrices. Numer Linear Algebra Appl, 32: e2603. https://doi.org/10.1002/nla.2603.
 
 [2] C. K. Filelis - Papadopoulos and G. A. Gravvanis (2025). Parallel sparsity patterns for factored incomplete inverse matrices, Journal of Computational Science, Volume 93, 2026, 102736, ISSN 1877-7503. https://doi.org/10.1016/j.jocs.2025.102736.
+
+[3] C. K. Filelis - Papadopoulos (2024). Adaptive Combined Incomplete Factorization and Inverse Matrix. To be submitted.
