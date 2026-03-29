@@ -10,7 +10,6 @@ INCDIR = inc
 # Compiler flags
 # -fPIC is essential for creating a shared library (.so)
 CXXFLAGS := -Wall -fPIC -O3 -std=c++17 -fopenmp -I$(INCDIR) -I$(MKLROOT)/include
-FFLAGS   := -O3 -fPIC -Wno-tabs# -Wno-tabs helps with older Fortran source
 
 # Linker flags
 # Added -lgfortran to support the Fortran objects
