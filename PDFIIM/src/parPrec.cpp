@@ -310,7 +310,7 @@ void pdfiim(sparseMatrix<int,int,double> &A,
 
                     norm1h = 1.0;
                     for(int j = 0; j < len; j++) norm1h += rhs2[j] * rhs2[j];
-                    norm1h = sqrt(norm1g);
+                    norm1h = sqrt(norm1h);
                 }            
                 else
                 {
