@@ -102,7 +102,7 @@ class sparseAccumulator {
             n = A.n;
             last = A.last;
             tlast = A.tlast;
-            nnz = A.last;
+            nnz = A.nnz;
             v = A.v;
             i = A.i;
         };
