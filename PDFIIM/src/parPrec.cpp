@@ -83,7 +83,7 @@
 // G                (sparseMatrix)      A sparseMatrix, initally unallocated, which upon exit retains 
 //                                      the values of the factor G (CSR).
 // D                (vector)            A double vector, initially empty, which upon exit points to
-//                                      to allocated space of size n+1 retaining the elements of the 
+//                                      to allocated space of size n retaining the elements of the 
 //                                      diagonal factor D^{-1}
 // H                (sparseMatrix)      A sparseMatrix, initally unallocated, which upon exit retains 
 //                                      the values of the factor H (CSR).
