@@ -96,8 +96,6 @@ void pciilus(sparseMatrix<int, int, double> &A,
              char filttype = '1',
              char patt = 'B')
 {
-    // Set number of threads for MKL
-    mkl_set_num_threads(1);
 
     // Square root of \epsilon_{mach}
     double seps = std::sqrt(std::numeric_limits<double>::epsilon());
@@ -147,6 +145,8 @@ void pciilus(sparseMatrix<int, int, double> &A,
 
 #pragma omp parallel
     {
+        // Set number of threads for MKL
+        mkl_set_num_threads(1);
         std::vector<int> inds;
         std::vector<double> B, rhs, rhs2;
         sparseAccumulatorSymbolic<int, int> col(n);
@@ -571,6 +571,8 @@ void pciilus(sparseMatrix<int, int, double> &A,
             // Invert and store diagonal
             D[i] = 1. / (s);
         }
+        mkl_set_num_threads(omp_get_max_threads());
+
     }
 
     // Count nonzero elements and form G
@@ -687,13 +689,4 @@ void pciilus(sparseMatrix<int, int, double> &A,
     Ht = std::vector<std::vector<double>>();
     Htj = std::vector<std::vector<int>>();
 
-    char *num_threads_str = getenv("MKL_NUM_THREADS");
-    if (num_threads_str != NULL)
-    {
-        int num_threads = atoi(num_threads_str);
-        if (num_threads > 0)
-        {
-            mkl_set_num_threads(num_threads);
-        }
-    }
 }
