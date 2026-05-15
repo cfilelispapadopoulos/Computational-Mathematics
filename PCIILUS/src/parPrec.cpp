@@ -143,10 +143,11 @@ void pciilus(sparseMatrix<int, int, double> &A,
 
     D[0] = 1. / A.v[0];
 
+    // Set number of threads for MKL
+    mkl_set_num_threads(1);
+
 #pragma omp parallel
     {
-        // Set number of threads for MKL
-        mkl_set_num_threads(1);
         std::vector<int> inds;
         std::vector<double> B, rhs, rhs2;
         sparseAccumulatorSymbolic<int, int> col(n);
@@ -571,9 +572,10 @@ void pciilus(sparseMatrix<int, int, double> &A,
             // Invert and store diagonal
             D[i] = 1. / (s);
         }
-        mkl_set_num_threads(omp_get_max_threads());
-
     }
+
+    // Reset number of threads for MKL
+    mkl_set_num_threads(omp_get_max_threads());
 
     // Count nonzero elements and form G
     U.r = n;
