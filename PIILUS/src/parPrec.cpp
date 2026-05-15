@@ -119,6 +119,9 @@ void piilus(sparseMatrix<int, int, double> &A,
 
     D[0] = 1. / A.v[0];
 
+    // Set number of threads for MKL
+    mkl_set_num_threads(1);
+
 #pragma omp parallel
     {
         std::vector<int> inds;
@@ -421,6 +424,9 @@ void piilus(sparseMatrix<int, int, double> &A,
             D[i] = 1. / (s);
         }
     }
+
+    // Reset number of threads for MKL
+    mkl_set_num_threads(omp_get_max_threads());
 
     // Count nonzero elements and form G
     U.r = n;
