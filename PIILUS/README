@@ -1,0 +1,28 @@
+Introduction
+============
+The PIILUS package includes the implementation of the Parallel Improved Incomplete LU with Skyline Storage preconditioning technique 
+in C++ programming language. The package also includes an implementation of the Implicit Preconditioned Bi-Conjugate Gradient Stabilized
+iterative method based on the PIILUS scheme. Functions for reading and writing Matrix Market files are also provided.
+
+
+Installation
+============
+Building the PIILUS software is performed by the issuing the following command on the root folder:
+   make
+
+Before issuing ``make'' command in the terminal, the full Intel environment (Intel oneAPI) should be (initially installed and then) 
+sourced, i.e: source /opt/intel/oneapi/setvars.sh.
+
+External Libraries
+==================
+This PIILUS package requires the following external libraries:
+
+Intel oneAPI - This library contains optimized verions of BLAS, LAPACK and other software packages and is required by IPBiCGSTAB. The
+	            library can be downloaded from https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-download.html for
+               different operating systems.
+
+
+Example Programs
+================
+The directory example/ includes an example file on how to use the PIILUS package to solve large unsymmetric sparse linear systems.
+The number of threads for parallel execution is controlled by the environmental variable `OMP_NUM_THREADS=nthreads`.
