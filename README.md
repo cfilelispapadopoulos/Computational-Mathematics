@@ -6,6 +6,8 @@ This repository contains codes from the field of Computational Mathematics, corr
 - AFIIM  - Adaptive Factored Incomplete Inverse Matrix with robust filtering ($$\alpha FIIM (\epsilon)$$) [1]
 - PDFIIM - Parallel Dynamic Factored Incomplete Inverse Matrix $$(PDFIIM(k,\ell,m,\epsilon))$$ [2]
 - ACIFIM - Adaptive Combined Incomplete Factorization and Inverse Matrix ($$\alpha CIFIM(\epsilon_1,\epsilon_2)$$) [3]
+- PIILUS - Parallel Improved Incomplete LUS Factorization ($$PIILUS(\epsilon,p,w)$$) [4]
+- PCIILUS - Parallel Combined Improved Incomplete LUS Factorization ($$PCIILUS(\epsilon,\eta,p,w)$$) [4]
 
 
 ## Important Note
@@ -18,3 +20,5 @@ may occur also when the software is executed in different hardware.
 [2] C. K. Filelis - Papadopoulos and G. A. Gravvanis (2025). Parallel sparsity patterns for factored incomplete inverse matrices, Journal of Computational Science, Volume 93, 2026, 102736, ISSN 1877-7503. https://doi.org/10.1016/j.jocs.2025.102736.
 
 [3] C. K. Filelis - Papadopoulos (2026). Adaptive Combined Incomplete Factorization and Inverse Matrices. Submitted.
+
+[4] C. K. Filelis - Papadopoulos (2026). Parallel Incomplete LUS Factorization. To Be Submitted.
